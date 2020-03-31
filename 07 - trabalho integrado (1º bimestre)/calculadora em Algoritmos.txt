@@ -1,0 +1,75 @@
+Algoritmo calcudora;
+
+Declare
+  numero1, numero2, resultado_operacao: real; //declarando 3 variaveis do tipo real
+  operacao, contador: inteiro; //declarando duas variaveis do tipo inteiro
+
+Inicio
+
+  Repita //inicio do laço de repetição
+    Escreva("=========CALCULADORA==========="); //tabela de operações da calculadora
+    Escreva("|   CODIGO   |    OPERACAO    |"); //tabela de operações da calculadora
+    Escreva("|     1      |     Adicao     |"); //tabela de operações da calculadora
+    Escreva("|     2      |    Subtracao   |"); //tabela de operações da calculadora
+    Escreva("|     3      |  Multiplicacao |"); //tabela de operações da calculadora
+    Escreva("|     4      |     Divisao    |"); //tabela de operações da calculadora
+    Escreva("|     5      |   Potenciacao  |"); //tabela de operações da calculadora
+    Escreva("|     0      |      Sair      |"); //tabela de operações da calculadora
+    Escreva("==============================="); //tabela de operações da calculadora
+
+    Escreva("Digite o codigo corresponde à operação: ");
+    Leia(operacao);
+
+    Se( operacao ≠ 0) então //verificando se o usuario não digitou 0, para solicitar os valores de entrada
+
+      Escreva("Digite um numero: ");
+      Leia(numero1);
+      Escreva("Digite outro numero: ");
+      Leia(numero2);
+      
+      resultado_operacao <- 1; //iniciando o operador com 1 para não influenciar nas operações
+      contador <- 1; //contador começa com 1 apenas para fins didáticos e melhor entendimento
+    Fim se;
+
+    Escolha (operacao) //inicio da estrutura de casos
+
+      caso 1:
+
+        resultado_operacao <- numero1 + numero2;
+
+      caso 2:
+
+        resultado_operacao <- numero1 - numero2;
+
+      caso 3:
+
+        resultado_operacao <- numero1 * numero2;
+      
+      caso 4:
+        
+        resultado_operacao <- numero1 / numero2;
+
+      caso 5:
+        
+        Enquanto (contador <= numero2) faça //inicio da estrutura de repetição para realizar a potenciação
+
+          resultado_operacao <- resultado_operacao * numero1;
+          
+          /*o resultado_operação setado como 1 recebe ele mesmo * o
+					primeiro numero digitado, que é a base da potência. O processo se repete até a variavel contadora se igualar ao
+          numero do expoente.*/
+
+          contador <- contador + 1;
+
+        Fim enquanto;
+      
+      caso contrario: 
+
+        Escreva("codigo da operação inválido");
+
+    Fim escolha;
+
+  Ate (operacao = 0); //condição de parada do laço das operações
+
+Fim Algoritmo.
+    
